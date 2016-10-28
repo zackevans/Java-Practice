@@ -17,11 +17,19 @@ public class PrimeNumbers
 	
 	public static boolean isPrime(int userInput)
 	{
-		for(int i = 2; i < userInput ;i++)
+		if(userInput%2 == 0)
 		{
-			if(userInput%i == 0)
+			return false;
+		}
+		
+		else
+		{
+			for(int i = 3; i <= 7; i+=2)
 			{
-				return false;
+				if(userInput%i == 0)
+				{
+					return false;
+				}
 			}
 		}
 		

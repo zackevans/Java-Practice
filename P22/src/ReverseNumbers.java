@@ -7,15 +7,17 @@ public class ReverseNumbers
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.print("Enter a number: ");
-		String number = scanner.next();
+		int number = scanner.nextInt();
 		
-		String finalNumber = "";
+		int rev = 0;
 		
-		for(int i = number.length() -1 ; i >=0 ; i--)
+		while(number !=0)
 		{
-			finalNumber = finalNumber + number.charAt(i);
+			rev = rev*10; // push all digits left.
+			rev = rev + number%10; // get last int
+			number = number/10; // remove last int
 		}
 		
-		System.out.println("Final number: " + finalNumber);	
+		System.out.println("Final number: " + rev);	
 	}
 }

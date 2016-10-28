@@ -7,14 +7,14 @@ public class TempConversion
 		
 		System.out.println("Fahrenheit        Celsius");
 		
-		for(int i = 0; i< fahrenheitTemps.length; i++)
+		for(int i = 0; i <= 200; i+=20)
 		{
-			System.out.println(i + "                 " +calculateCelsius(fahrenheitTemps[i]));	
+			System.out.println(i + "\t\t" +calculateCelsius(i));	
 		}
 	}
 	
 	public static double calculateCelsius(double temp)
 	{
-		return (temp-32)/1.8;
+		return (temp-32)*5/ 9;
 	}
 }

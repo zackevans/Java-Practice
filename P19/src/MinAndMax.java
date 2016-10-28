@@ -10,34 +10,35 @@ public class MinAndMax
 		
 		System.out.println("Please enter a list of positive numbers. Signal the end of the list with -1.");
 		
+		System.out.print("Please enter a number: ");
+		int userInput = scanner.nextInt();
+		
+		int min = userInput;
+		int max = userInput;
+		
 		int t = 1;
-		while(t !=0)
+		while(t != 0)
 		{
 			System.out.print("Please enter a number: ");
-			int userInput = scanner.nextInt();
+			int userIn = scanner.nextInt();
 			
-			if(userInput != -1)
+			if(userIn != -1)
 			{
-				inputValues.add(userInput);
+				if(userIn > max)
+				{
+					max = userIn;
+				}
+				
+				if(userIn < min)
+				{
+					min = userIn;
+				}
 			}
 			
-			else t = 0;
-		}
-		
-		int max = inputValues.get(0);
-		int min = inputValues.get(0);
-		
-		for (int i = 0; i < inputValues.size(); i++)
-		{
-			if(inputValues.get(i) < min)
+			else
 			{
-				min = inputValues.get(i);
+				t = 0;
 			}
-			
-			if(inputValues.get(i) > max)
-			{
-				max = inputValues.get(i);
-			}		
 		}
 		
 		System.out.println("The min is: " + min + ". The max is: " + max);
